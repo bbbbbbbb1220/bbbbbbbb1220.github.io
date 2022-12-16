@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	
+	<input type="button" value="number1" 
+	onClick="alert(x);">
+	<input type="button" value="number2" 
+	onClick="alert(y);">
+
+	<script>
+
+		var x,y;
+		x=parseInt(window.prompt("number1"));
+		y=parseInt(window.prompt("number2"));
+
+		if(x>y){
+			document.writeln(x+">"+y);
+		}else if(x<y){
+			document.writeln(x+"<"+y);
+		}else{
+			document.writeln(x+"="+y);
+		}
+
+
+
+
+	</script>
+
+
+	
+	
+</body>
+</html>
