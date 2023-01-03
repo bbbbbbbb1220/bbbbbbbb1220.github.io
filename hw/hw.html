@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+	
+   <select id="op1">  
+  <option value="add" onsubmit="setOp('+', 'add');"/>add</option>  
+  <option value="miner" onsubmit="setOp('-', 'miner');"/>miner</option> 
+  <option value="times" onsubmit="setOp('*', 'times');"/>times</option> 
+  <option value="divide"onsubmit="setOp('/', 'divide');"/>divide</option>
+ 
+  </select> 
+        
+<table id="tb_calc";>
+ 
+
+   <tr>
+     <td> <input id="x" type="text" style="width:100px" value="" name="x" /></td>
+    <td> <input id="y" type="text" style="width:100px" value="" name="y" /> </td>
+    <td> <input id="opTips" type="button" value="submit" onclick="calc();"/> </td>
+    <td> <lable id="z" name="z"></lable> </td>
+  </tr>
+</table>
+
+
+<script type="application/javascript">
+  function setOp(op, opTips)
+  {
+    var tb=document.getElementById("tb_calc");
+    tb.style.display = "none";
+          
+    document.getElementById("x").value = ""; 
+    document.getElementById("y").value = ""; 
+    document.getElementById("z").innerText = ""; 
+    
+    tb.style.display = "block";
+  }
+  function calc()
+  {
+    var x = parseInt(document.getElementById("x").value); 
+    var y = parseInt(document.getElementById("y").value);
+    var op = document.getElementById("op1");
+    
+    var z = "";
+    switch(op)
+    {
+      case '+':
+        z = x + y;
+        break;
+      case '-':
+        z = x - y;
+        break;
+      case '*': ;
+        z = x * y;
+        break;
+      case '/': ;
+        z = x / y;
+        break;
+      default:
+        z = '';
+    }
+    console.log(x, op, y, '=', z);
+    document.getElementById("z").innerText = z;
+  }
+</script>
+</body>
+</html>
